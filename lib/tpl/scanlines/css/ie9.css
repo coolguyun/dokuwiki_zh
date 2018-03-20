@@ -1,0 +1,14 @@
+/**
+ * Additional IE9 CSS for Template Scanlines
+ *
+ * @author Johannes Winkler <johannes@rocking-minds.org>
+ */
+ 
+div.dokuwiki div.userbar a:hover,
+div.dokuwiki div.navi li a:visited,
+div.dokuwiki div.navi li a:hover,
+div.dokuwiki div.navi li a:active,
+div.dokuwiki div.footer a:hover {
+  color: #fff;	
+  text-decoration: underline;
+}

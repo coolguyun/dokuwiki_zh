@@ -1,0 +1,796 @@
+/******************************************************************************
+ ********************************  ATTENTION  *********************************
+         DO NOT MODIFY THIS FILE, IT WILL NOT BE PRESERVED ON UPDATES!
+ ******************************************************************************
+  If you want to add some own screen CSS, have a look at <http://www.dokuwiki.org/template:scanlines?&#customizing>
+  and "/user/screen.css". You have been warned!
+ *****************************************************************************/
+
+/**
+ * Layout for Template Scanlines
+ *
+ * @author Johannes Winkler <johannes@rocking-minds.org>
+ */
+
+/*
+- general elements
+- header
+- logo
+	- logo link
+- top and bottom bar
+	- userbar
+		- userbar buttons 
+- navigation
+	- navi links 
+- main
+- the document
+   - full page
+	- right page 
+	- left page   
+   - normal
+- Sidebar
+	 - left Sidebar
+	 - right Sidebar 
+- Footer
+- Media Queries
+   - max-width: 1140px
+   - max-width: 1050px
+   - max-width: 840px
+   - max-width: 600px 
+*/
+
+ /* general elements
+ --------------------------------------------- */
+
+* { padding: 0; margin: 0; }
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: __background__;
+  color: __text__;
+  font: 82% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+  line-height: 1.6em !important;  
+} 
+
+/* header
+--------------------------------------------- */
+
+div.dokuwiki div.header { 
+  min-height: 88px; 
+  min-width: 1100px;
+  width: 100%; 
+  background: url(images/fallback/header.png);            
+  background: -webkit-gradient(linear, left top, left bottom,color-stop(0, #e9e9e9), color-stop(.40, #cacacb), 
+  color-stop(.48, #c2c3c2), color-stop(.56, #d0d0d0), color-stop(.70, #e3e3e3), color-stop(1, #eeeeee));
+  background: -webkit-linear-gradient(top, #e9e9e9, #cacacb 40%, #c2c3c2 48%, #d0d0d0 56%, #e3e3e3 70%, #eeeeee); 
+  background: -moz-linear-gradient(top, #e9e9e9, #cacacb 40%, #c2c3c2 48%, #d0d0d0 56%, #e3e3e3 70%, #eeeeee);
+  background: -ms-linear-gradient(top, #e9e9e9, #cacacb 40%, #c2c3c2 48%, #d0d0d0 56%, #e3e3e3 70%, #eeeeee);
+  background: -o-linear-gradient(top, #e9e9e9, #cacacb 40%, #c2c3c2 48%, #d0d0d0 56%, #e3e3e3 70%, #eeeeee); 
+  background: linear-gradient(top, #e9e9e9, #cacacb 40%, #c2c3c2 48%, #d0d0d0 56%, #e3e3e3 70%, #eeeeee);  
+  -pie-background: linear-gradient(top, #e9e9e9, #cacacb 40%, #c2c3c2 48%, #d0d0d0 56%, #e3e3e3 70%, #eeeeee);  
+  behavior: url(htc/PIE-1.0beta5/PIE.htc);
+}
+
+div.dokuwiki div.header_content {
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 2em 0;
+  position: relative;  
+  width: 1100px;
+}
+
+/* logo
+--------------------------------------------- */
+
+div.dokuwiki div.logo {
+  min-height: 130px;  
+  width: 1100px;  
+}
+
+div.dokuwiki div.logo h1 a,
+div.dokuwiki div.logo h1 {
+  border: none;
+  color: __logo__ !important; 
+  font: bold 50px sans-serif, cursive;
+  margin: 0;
+  outline: none; 
+  padding: 0;
+  text-decoration: none;  
+}
+
+div.dokuwiki div.logo h2 {
+  border: none;
+  color: __logo__;
+  font: bold 25px sans-serif, cursive;
+  letter-spacing: 0.1em;
+  margin: 0 0 0 3em;
+  text-decoration: none;
+  text-indent: -2em;
+  text-shadow: 0 -1px 1px __white__, 0 1px 1px __text_shadow__	;  
+}
+
+/* top and bottom bar
+--------------------------------------------- */
+
+div.dokuwiki div.bar_top {
+  background: url(images/scanlines.png);
+  height: 80px;
+  min-width: 1100px;
+  width: 100%;  
+}
+
+div.dokuwiki div.bar_top_content {
+  height: 47px; 
+  margin: 0 auto;
+  position: relative;
+  width: 1047px;  
+}
+
+div.dokuwiki div.bar_bottom {
+  border-top: 2px solid__border2__;
+  border-right: 1.5px solid __border__;  
+  border-bottom: 2px solid __border2__;
+  border-left: 1.5px solid __border__;   
+  float: left;
+  padding: 0;
+  width: 100%;
+}  
+
+div.dokuwiki div.bar_bottom_content {
+  width: 97.5%;
+  margin: 0 auto; 
+  padding: 0.8em 0;
+ 
+}  
+
+div.dokuwiki div.bar-left {
+  float: left;
+}
+
+div.dokuwiki div.bar-right {
+  text-align: right;
+}
+
+div.dokuwiki #bar__bottom {
+  margin: 1.5em 0 0.188em;
+}
+
+div.dokuwiki #bar__topright {
+  position: absolute;
+  top: .9em;
+  right: .4em;
+}
+
+/* --- userbar --- */
+div.dokuwiki div.userbar {
+  position: absolute;
+  top: 3.5em;
+  right: 0;
+}
+
+/* userbar buttons */
+div.dokuwiki div.userbar a {
+  color: __nearly_white__;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 1em;
+  outline: 0;
+  padding: 5em 1em 0;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px __text_shadow2__;
+}
+
+div.dokuwiki div.userbar .admin,
+div.dokuwiki div.userbar .profile,
+div.dokuwiki div.userbar .logout {
+  background: url(images/sprite1.png) no-repeat 0 0;	
+  -pie-png-fix: true;
+  behavior: url(htc/PIE-1.0beta5/PIE.htc);
+}
+
+div.dokuwiki div.userbar .login {
+  background: transparent url(images/sprite2.png) no-repeat 0 0;	
+  -pie-png-fix: true;
+  behavior: url(htc/PIE-1.0beta5/PIE.htc);
+}
+
+div.dokuwiki div.userbar a.admin {
+  background-position: -10px -5px;
+}
+
+div.dokuwiki div.userbar a.profile {
+  background-position: -10px -90px;
+}
+
+div.dokuwiki div.userbar a.logout {
+  background-position: -10px -175px;
+}
+
+div.dokuwiki div.userbar a.login {
+  background-position: -10px -5px;
+}
+
+div.dokuwiki div.userbar .admin:hover {
+  background-position: -10px -260px;
+}
+
+div.dokuwiki div.userbar .profile:hover {
+  background-position: -10px -340px;
+}
+
+div.dokuwiki div.userbar .logout:hover {
+  background-position: -10px -420px;
+}
+
+div.dokuwiki div.userbar .login:hover {
+  background-position: -10px -90px;
+}
+
+
+/* navigation
+--------------------------------------------- */
+
+div.dokuwiki div.navi {
+  height: 47px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+div.dokuwiki div.navi ul { 
+  padding: 0 0 0 .5em;
+  margin: 0;
+  list-style: none;   
+}
+
+div.dokuwiki div.navi li { 
+  display: inline-block;
+  float: left;
+}
+
+/* --- navi links --- */
+div.dokuwiki div.navi li a { 
+  border-right: 1.8px dashed #969696;
+  border-left: 1.8px dashed #969696;   
+  color: __nearly_white__;
+  display: block;
+  float: left;
+  font: 17px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  height: 35px;
+  margin-right: 1em;
+  padding: 0.6em 1em 0;    
+  text-decoration: none;  
+  -webkit-border-bottom-right-radius: 1px;
+  -webkit-border-bottom-left-radius: 1px;
+  -khtmlt-border-bottom-right-radius: 1px;
+  -khtml-border-bottom-left-radius: 1px;  
+  -moz-border-radius-bottomright: 1px; 	
+  -moz-border-radius-bottomleft: 1px;  
+  -o-border-radius-bottomright: 1px; 	
+  -o-border-radius-bottomleft: 1px;
+  border-bottom-right-radius: 1px; 	
+  border-bottom-left-radius: 1px;
+  -webkit-box-shadow: 0 1px 3px __box_shadow__; 
+  -khtml-box-shadow: 0 1px 3px __box_shadow__;
+  -moz-box-shadow: 0 1px 3px __box_shadow__;
+  -o-box-shadow: 0 1px 3px __box_shadow__;    
+  box-shadow: 0 1px 3px __box_shadow__;
+}
+
+div.dokuwiki div.navi li a:link,
+div.dokuwiki div.navi li a:visited {
+  background: rgba(69, 68, 63, .006);
+  text-shadow: 0 -1px 1px __text_shadow2__;
+}
+
+div.dokuwiki div.navi li a:hover {
+
+
+  background: rgba(69, 68, 63, .1);
+  text-shadow: 0 1.5px 1px __text_shadow2__;
+  	-webkit-transition: all 0.25s ease-in-out;
+   -moz-transition: all 0.25s ease-in-out;
+   -o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+div.dokuwiki div.navi li a:active {
+  background: rgba(69, 68, 63, .06);
+  outline: 1px dotted #FFF;
+  text-shadow: 0 -1px 1px __text_shadow2__;
+}
+
+/* main
+--------------------------------------------- */
+
+div.dokuwiki div.main {
+  background: __white__;
+  margin: 1em auto 1.5em;
+  padding: 1em;
+  width: 985px;    
+  -webkit-box-shadow: 0 0 15px __box_shadow__;    
+  -khtml-box-shadow: 0 0 15px __box_shadow__;
+  -moz-box-shadow: 0 0 15px  __box_shadow__;
+  -o-box-shadow: 0 0 15px __box_shadow__;
+  box-shadow: 0 0 15px __box_shadow__;
+  -webkit-border-radius: 3px;  
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;  
+  border-radius: 3px;
+  behavior: url(htc/PIE-1.0beta5/PIE.htc);
+} 
+
+/* the document
+--------------------------------------------- */
+
+/* --- full page --- */
+div.dokuwiki div.full_page {
+  width: 985px;
+}
+
+/* --- right page --- */
+div.dokuwiki div.right_page {
+   float: right;
+   width: 720px;   
+}
+
+/* --- left page --- */
+div.dokuwiki div.left_page {
+  float: left;
+  width: 720px;  
+}
+
+/* --- page --- */
+div.dokuwiki div.page,
+div.dokuwiki div.page_720  {
+  border-top: 1px solid __border3__; 
+  border-right: 1px solid __border3__;
+  border-bottom: 2px solid __border2__;
+  border-left: 1px solid __border3__;   
+  text-align: justify;  
+  width: 100%;
+}
+
+div.dokuwiki div.page { 
+  float: left; 
+}
+
+div.dokuwiki div.tocheader,
+div.dokuwiki div.tocheader a,
+div.dokuwiki div.page_title,
+div.dokuwiki div.sidebar_title {
+  border-bottom: 1.5px solid __border__;
+  color: __text__;
+  font: 15px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  height: 21.8px;
+  padding: 0.2em 0 0;
+  text-align: center;
+  width: 100%;	
+  background: url(images/fallback/title.png);
+  background: -webkit-gradient(linear, left top, left bottom,color-stop(0, #e4e4e4), color-stop(.75, #C9C9C9), color-stop(1, #D9D9D8));
+  background: -webkit-linear-gradient(top, #e4e4e4, #C9C9C9 75%, #D9D9D8);
+  background: -moz-linear-gradient(top, #e4e4e4, #C9C9C9 75%, #D9D9D8);
+  background: -ms-linear-gradient(top, #e4e4e4, #C9C9C9 75%, #D9D9D8);
+  background: -o-linear-gradient(top, #e4e4e4, #C9C9C9 75%, #D9D9D8);
+  background: linear-gradient(top, #e4e4e4, #C9C9C9 75%, #D9D9D8);	
+  -pie-background: linear-gradient(top, #e4e4e4, #C9C9C9 75%, #D9D9D8);	
+  behavior: url(htc/PIE-1.0beta5/PIE.htc);
+}
+
+div.dokuwiki div.page_content {
+	margin: 0.8em;
+}
+
+div.dokuwiki table {
+  font-size: 100%;
+}
+
+div.dokuwiki tr,
+div.dokuwiki td,
+div.dokuwiki th {
+}
+
+div.dokuwiki img {
+  border: none;
+}
+
+div.dokuwiki p,
+div.dokuwiki blockquote,
+div.dokuwiki table,
+div.dokuwiki pre {
+  margin: 0 0 1em;
+}
+
+div.dokuwiki hr {
+  border: 0;
+  border-top: 1px solid __border__;
+  height: 0;
+  text-align: center; 
+}
+
+div.dokuwiki div.nothing {
+  margin: 2em;
+  text-align: center;  
+}
+
+/* Sidebar
+--------------------------------------------- */
+
+div.dokuwiki div.sidebar_single {
+	border-top: 1px solid __border3__;
+	border-right: 2px solid __border2__;	
+	border-bottom: 2px solid __border2__;
+	border-left: 1px solid __border3__;		
+	margin: 1em 0 0;
+	text-align: justify;
+	width: 100%;
+}
+
+div.dokuwiki div.sidebar_content{
+	margin: 0.6em;
+	overflow: auto;
+}
+
+div.dokuwiki div.left_sidebar h1,
+div.dokuwiki div.left_sidebar h2,
+div.dokuwiki div.left_sidebar h3,
+div.dokuwiki div.left_sidebar h4,
+div.dokuwiki div.left_sidebar h5,
+div.dokuwiki div.left_sidebar h6,
+div.dokuwiki div.right_sidebar h1,
+div.dokuwiki div.right_sidebar h2,
+div.dokuwiki div.right_sidebar h3,
+div.dokuwiki div.right_sidebar h4,
+div.dokuwiki div.right_sidebar h5,
+div.dokuwiki div.right_sidebar h6 {
+  border: none;
+  font: bold 100% Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;  
+  margin: 0 0 0.2em;
+  padding: 0.1em;
+}
+
+div.dokuwiki div.left_sidebar h1,
+div.dokuwiki div.right_sidebar h1 {
+  padding: 0 0 0 0.2em;
+}
+
+div.dokuwiki div.left_sidebar div.level2,
+div.dokuwiki div.right_sidebar div.level2,
+div.dokuwiki div.left_sidebar div.level3,
+div.dokuwiki div.right_sidebar div.level3,
+div.dokuwiki div.left_sidebar div.level4,
+div.dokuwiki div.right_sidebar div.level4,
+div.dokuwiki div.left_sidebar div.level5,
+div.dokuwiki div.right_sidebar div.level5 {
+  margin: 0 0 0 0.1875em;
+}
+
+div.dokuwiki div.left_sidebar ul,
+div.dokuwiki div.right_sidebar ul {
+  margin: 0 0 0 1.5em;
+}
+
+div.dokuwiki div.left_sidebar div.secedit,
+div.dokuwiki div.right_sidebar div.secedit {
+  text-align: right;
+}
+
+
+/* --- left Sidebar --- */
+div.dokuwiki div.left_sidebar {
+  float: left;
+  margin: -1em 0 0;
+  text-align: justify;
+  width: 250px;
+}
+
+/* --- right Sidebar --- */
+div.dokuwiki div.right_sidebar {
+  float: right;
+  margin: -1em 0 0;
+  text-align: justify;
+  width: 250px;
+}
+
+/* Footer
+--------------------------------------------- */
+
+div.dokuwiki div.footer {	
+  background: url(images/scanlines.png) repeat-x;
+  border: 1px solid #8eb0d9;
+  color: __nearly_white__;
+  font: bold 11.5px/1.5 "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  height: 42.6px;
+  margin: 0 auto;  
+  margin-bottom: 1em;
+  padding: .4em 1em 0;
+  text-align: center;
+  text-shadow: 0 -1px 1px __text_shadow2__;
+  width: 1015px;  
+  -webkit-border-radius: 6px; 
+  -khtml-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;   
+  border-radius: 6px;
+  behavior: url(htc/PIE-1.0beta5/PIE.htc);
+  -webkit-box-shadow: 0 0 10px __box_shadow__, inset 1px 1px 3px #e2e2e2;  
+  -khtml-box-shadow: 0 0 10px __box_shadow__, inset 1px 1px 3px #e2e2e2;  
+  -moz-box-shadow: 0 0 10px  __box_shadow__, inset 1px 1px 3px #e2e2e2;
+  -o-box-shadow: 0 0 10px __box_shadow__, inset 1px 1px 1px #e2e2e2;   
+  box-shadow: 0 0 10px __box_shadow__, inset 1px 1px 3px #e2e2e2;
+}
+
+div.dokuwiki div.footer:hover {	
+  border: 2px solid #8eb0d9;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+div.dokuwiki div.footer a:link,
+div.dokuwiki div.footer a:visited,
+div.dokuwiki div.footer a:active,
+div.dokuwiki div.footer a:hover {
+  border-bottom: none;
+  color: __nearly_white__;  
+  font-size: 11.6px;
+  text-decoration: none; 
+}
+
+div.dokuwiki div.footer a:hover {
+  text-shadow: 0 1.5px 1px __text_shadow2__;  
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+/* --- max-width: 1140px --- */
+@media only screen and (max-width: 1140px) {
+  div.dokuwiki div.header,
+  div.dokuwiki div.header_content,
+  div.dokuwiki div.bar_top,
+  div.dokuwiki div.bar_top_content,
+  div.dokuwiki div.navi,
+  div.dokuwiki div.full_page {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  div.dokuwiki {
+  	min-width: 300px;
+  }
+  
+  div.dokuwiki div.main {
+    width: 90%;   
+  } 
+    
+  div.dokuwiki div.page_720, 
+  div.dokuwiki div.page {
+    overflow-x: scroll;
+  }
+    
+  
+  div.dokuwiki div.logo {
+    margin: 0 auto; 
+    min-height: auto;
+    overflow: hidden;
+    width: 96%;    
+  }
+  
+  div.dokuwiki div.right_page,
+  div.dokuwiki div.left_page {
+    width: 73.8%;  
+  }
+
+  div.dokuwiki div.left_sidebar,
+  div.dokuwiki div.right_sidebar {
+    width: 24.8%;
+  }
+
+  div.dokuwiki div.footer {	
+    font-size: 80%;
+    width: 92%;
+  }
+
+  div.dokuwiki div.footer a:link,
+  div.dokuwiki div.footer a:visited,
+  div.dokuwiki div.footer a:active,
+  div.dokuwiki div.footer a:hover {
+    font-size: 95%;
+  }
+}
+
+/* --- max-width: 1050px --- */
+@media only screen and (max-width: 1050px) {
+  div.dokuwiki div.userbar,
+  div.dokuwiki div.bar_top_content {
+    position: static;
+  }  
+  
+  div.dokuwiki div.userbar {
+    margin: .5em 0 0 .5em;
+  }  
+  
+  
+  div.dokuwiki div.stylehead {
+    position: relative;
+  }
+  
+  div.dokuwiki #bar__topright {
+    right: .5em;
+    top: 40%;    
+  }
+  
+  div.dokuwiki div.toc_none_sidebar,
+  div.dokuwiki div.toc {
+    width: 100%;    
+  } 
+  
+  div.dokuwiki div.toc_none_sidebar div.tocheader,
+  div.dokuwiki div.toc_none_sidebar div.tocheader a {
+    background: __background__;
+    border-bottom: 2px solid __border2__;
+  }
+  
+  div.dokuwiki #top_link,
+  div.dokuwiki #top_link:hover {
+    height: 30px;
+    right: 0;
+    width: 85px;    
+  }
+}
+
+/* --- max-width: 840px --- */
+@media only screen and (max-width: 840px) {
+  div.dokuwiki div.logo h2 {
+    display: none;  
+  }
+    
+  div.dokuwiki div.logo {
+    min-height: 48px;
+  }  
+
+  div.dokuwiki div.left_sidebar,
+  div.dokuwiki div.right_sidebar,
+  div.dokuwiki div.right_page,
+  div.dokuwiki div.left_page,
+  div.dokuwiki div.full_page,
+  div.dokuwiki div.bar_bottom,
+  div.dokuwiki div.bar_bottom_720 {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  div.dokuwiki div.bar_top,
+  div.dokuwiki div.bar_top_content  {
+    background: none;
+    height: auto;
+    position: relative;    
+  }
+  
+  div.dokuwiki #bar__topright {
+    bottom: -2.8em;  
+    text-align: center;
+    top: auto;
+    width: 100%;      
+  }
+  
+  div.dokuwiki input#qsearch__in {
+    width: 40%;
+  }
+  
+  div.dokuwiki div.stylehead:after {
+    background: url(images/scanlines.png) repeat-x bottom left;
+    content: " ";
+    display: block;
+    height: 33px;    
+    width: 100%;    
+  }
+
+  div.dokuwiki div.navi {
+    background: url(images/scanlines_viewport.png);
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  div.dokuwiki div.navi li a { 
+    height: 35.6px;
+    margin: 0 .5em 0 0;    
+   }
+}
+
+/* --- max-width: 600px --- */
+@media only screen and (max-width: 600px) {
+  div.dokuwiki div.userbar a {
+    margin: 0;
+  }
+    div.dokuwiki div.userbar {
+    margin-left: .5em;
+  }
+       
+  div.dokuwiki div.main {
+    border: 0;
+    padding: 0;
+    width: 100%;    
+  } 
+ 
+  div.dokuwiki div.navi li a { 
+    font-size: 15px;
+    height: 34px;
+    padding: 0.8em .5em 0;
+  }
+  
+  div.dokuwiki div.page,
+  div.dokuwiki div.page_720,  
+  div.dokuwiki div.bar_bottom,
+  div.dokuwiki div.sidebar_single {
+    border: 0;
+    border-top: 2px solid __border2__;
+  }  
+  
+  div.dokuwiki div.tocheader,
+  div.dokuwiki div.tocheader a,
+  div.dokuwiki #toc__inside {
+    border: 0;
+  }
+   
+  div.dokuwiki div.tocheader,
+  div.dokuwiki div.tocheader a {
+    border-top: 2px solid __border2__;
+    border-bottom: 1.5px solid __border__;
+  }
+
+  div.dokuwiki div.footer {	
+    background: none;
+    border: none;
+    color: __text__;
+    font-size: 95%;
+    height: auto;
+    margin: 0;
+    text-shadow: none;
+    -webkit-border-radius: none; 
+    -khtml-border-radius: none;
+    -moz-border-radius: none;
+    -o-border-radius: none;   
+    border-radius: none;
+    -webkit-box-shadow: none;  
+    -khtml-box-shadow: none;  
+    -moz-box-shadow: none;
+    -o-box-shadow: none;   
+    box-shadow: none;
+  }
+
+  div.dokuwiki div.footer:hover {	
+    border: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+  }
+
+
+  div.dokuwiki div.footer a:link,
+  div.dokuwiki div.footer a:visited,
+  div.dokuwiki div.footer a:active,
+  div.dokuwiki div.footer a:hover {
+    font-size: 100%;
+    color: #7d7d7d;
+  }
+
+  div.dokuwiki div.footer a:hover {
+    color: #8f8f8f;
+    text-shadow: .1px .1px 12px #414141;  
+  }
+
+
+  div.dokuwiki #top_link,
+  div.dokuwiki #top_link:hover {
+    float: right;
+    position: relative;    
+  }
+}

@@ -1,0 +1,7 @@
+base     scanlines
+author   Johannes Winkler
+email    johannes@rocking-minds.org
+date     2013-01-01
+name     Scanlines Template
+desc     A very easy all-round template for everyone
+url      http://www.dokuwiki.org/template:scanlines

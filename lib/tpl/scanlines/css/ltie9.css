@@ -1,0 +1,71 @@
+/**
+ * Additional ltIE9 CSS for Template Scanlines
+ *
+ * @author Johannes Winkler <johannes@rocking-minds.org>
+ */
+
+div.dokuwiki input.button,
+div.dokuwiki button.button {
+  border: 1px solid #bbb;
+}
+
+div.dokuwiki div.userbar a:hover,
+div.dokuwiki div.navi li a:visited,
+div.dokuwiki div.navi li a:hover,
+div.dokuwiki div.navi li a:active,
+div.dokuwiki div.footer a:hover {
+  color: #fff;	
+  text-decoration: underline;
+}
+
+* html div.dokuwiki div.userbar a { /* <= IE6 only*/
+  padding: 7em 1em 0;
+}
+
+div.dokuwiki div.navi li a:link,
+div.dokuwiki div.navi li a:visited,
+div.dokuwiki div.border,
+div.dokuwiki div.navi li a:hover,
+div.dokuwiki div.navi li a:active { 
+  background: url(../images/fallback/sprite3.png) no-repeat;
+}
+
+div.dokuwiki div.navi li a:link,
+div.dokuwiki div.navi li a:visited {
+  background-position: 0 0;
+  height: 37px;
+}
+
+div.dokuwiki div.border {
+  background-position: -439px 0;
+  float: left;
+  height: 47px;
+  margin-left: -1.3em;
+  width: 3px;   
+}
+
+div.dokuwiki div.navi li a:hover,
+div.dokuwiki div.navi li a:active {
+  background-position: 0 -49px;
+  height: 37px; 
+}
+
+div.dokuwiki div.navi li a { 
+  border: none; 
+  -webkit-border-radius: none;
+  -khtmlt-border-radius: none;
+  -moz-border-radius: none; 	
+  -o-border-radius: none; 	
+  border-radius: none; 	
+  -webkit-box-shadow: none; 
+  -khtml-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;    
+  box-shadow: none;
+}
+
+* html div.dokuwiki #top_link { /* <= IE6 only*/
+  background: url(../images/fallback/sprite4.gif) no-repeat;
+  float: right;
+  margin-top: -14em;
+}
